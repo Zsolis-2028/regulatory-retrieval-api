@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  regulatory-api:
+    build: .
+    container_name: regulatory-api
+    ports:
+      - "5000:5000"
+    environment:
+      PORT: 5000
+      TOP_K: 3
+      CHUNKS_FILE: "chunks.jsonl"
+    restart: unless-stopped
